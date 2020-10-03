@@ -14,6 +14,7 @@ then a 20% discount will be applied to the entire order
 #### Endpoints
 
 Actuator Health Check Endpoint http://localhost:8080/actuator/health
+
 Get Total Endpoint http://localhost:8080/getTotal
 
 TacoRequest Example
