@@ -5,14 +5,16 @@ import com.detroit.labs.taco.controller.api.TacoResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TacoControllerTest {
 
     static TacoController tacoController;
 
     @BeforeAll
-    public static void setup() { tacoController = new TacoController(); }
+    public static void setup() {
+        tacoController = new TacoController();
+    }
 
     @Test
     void testGetTotal() {

@@ -1,4 +1,4 @@
-# Taco Laco
+# Taco Loco
 
 Java Services to calculate Taco Ordered
 
@@ -9,7 +9,7 @@ Chicken or Beef Taco, $3.00 ea.
 Chorizo Taco, $3.50 ea. 
 
 If a customer orders 4 or more tacos, 
-then a 20% discount wiil be applied to the entire order
+then a 20% discount will be applied to the entire order
 
 ####Endpoints
 
