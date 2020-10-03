@@ -14,16 +14,30 @@ import javax.validation.Valid;
 public class TacoController {
 
     @PostMapping
-    public TacoResponse getTotal(@RequestBody @Valid TacoRequest tacoRequest) {
+    public TacoResponse getTotal(@RequestBody @Valid TacoRequest[] tacoRequest) {
 
-        TacoResponse tacoResponse = new TacoResponse();
-        double total = (tacoRequest.getTacoVeggie() * 2.50) +
-                (tacoRequest.getTacoChickenBeef() * 3.00) +
-                (tacoRequest.getTacoChorizo() * 3.50);
+        double total = 0;
+        int count = 0;
 
-        if (tacoRequest.getTacoVeggie() + tacoRequest.getTacoChickenBeef() + tacoRequest.getTacoChorizo() > 3)
+        for (TacoRequest request: tacoRequest) {
+            switch (request.getName()) {
+                case "tacoVeggie":
+                    total = total + request.getValue() * 2.50;
+                    break;
+                case "tacoChickenBeef":
+                    total = total + request.getValue() * 3.00;
+                    break;
+                case "tacoChorizo":
+                    total = total + request.getValue() * 3.50;
+                    break;
+                default:
+            }
+            count = count + request.getValue();
+        }
+        if(count > 3)
             total = total - (total * .2);
 
+        TacoResponse tacoResponse = new TacoResponse();
         tacoResponse.setTotal(total);
         return tacoResponse;
     }

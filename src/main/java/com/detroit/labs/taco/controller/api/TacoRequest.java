@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TacoRequest {
 
-    int tacoVeggie;
-    int tacoChickenBeef;
-    int tacoChorizo;
+    String name;
+    int value;
 }

@@ -18,20 +18,35 @@ class TacoControllerTest {
 
     @Test
     void testGetTotal() {
-        TacoRequest request = TacoRequest.builder().tacoVeggie(1)
-                .tacoChickenBeef(1)
-                .tacoChorizo(1)
-                .build();
-        TacoResponse response = tacoController.getTotal(request);
+        TacoRequest item1 = TacoRequest.builder().name("tacoVeggie").value(1).build();
+        TacoRequest[] requests = new TacoRequest[1];
+        requests[0] = item1;
+        TacoResponse response = tacoController.getTotal(requests);
 
-        assertEquals(9.0, response.getTotal());
+        assertEquals(2.5, response.getTotal());
     }
 
     @Test
     void testGetTotalIncludesDiscount() {
-        TacoRequest request = TacoRequest.builder().tacoVeggie(4).build();
-        TacoResponse response = tacoController.getTotal(request);
+        TacoRequest item1 = TacoRequest.builder().name("tacoVeggie").value(4).build();
+        TacoRequest[] requests = new TacoRequest[1];
+        requests[0] = item1;
+        TacoResponse response = tacoController.getTotal(requests);
 
         assertEquals(8.0, response.getTotal());
+    }
+
+    @Test
+    void testGetTotalMultipleItems() {
+        TacoRequest item1 = TacoRequest.builder().name("tacoVeggie").value(1).build();
+        TacoRequest item2 = TacoRequest.builder().name("tacoChickenBeef").value(1).build();
+        TacoRequest item3 = TacoRequest.builder().name("tacoChorizo").value(1).build();
+        TacoRequest[] requests = new TacoRequest[3];
+        requests[0] = item1;
+        requests[1] = item2;
+        requests[2] = item3;
+        TacoResponse response = tacoController.getTotal(requests);
+
+        assertEquals(9.0, response.getTotal());
     }
 }

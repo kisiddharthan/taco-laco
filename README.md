@@ -13,14 +13,18 @@ then a 20% discount will be applied to the entire order
 
 #### Endpoints
 
+Taco Loco Endpoint http://localhost:8080/
+
 Actuator Health Check Endpoint http://localhost:8080/actuator/health
 
 Get Total Endpoint http://localhost:8080/getTotal
 
 TacoRequest Example
 
+[
 { 
     "tacoVeggie": 4,
     "tacoChickenBeef" : 0,
     "tacoChorizo" : 0
 }
+]

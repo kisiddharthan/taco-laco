@@ -1,0 +1,141 @@
+.expired-notice {
+	color: red;
+	font-weight: bold;
+}
+
+.flag-bf {
+	font-weight: bold;
+}
+
+.custom-required:after {
+	content: "*";
+	color: red;
+}
+
+.custom-reset-button {
+	height: 30px;
+}
+
+.removed {
+	background-color: #c1c2c3 !important;
+	border-bottom: 2px solid #9b9b9b !important;
+}
+
+.account-table {
+	border-right: 0px !important;
+}
+
+table.dataTable td {
+   border-bottom: 1px solid #BBB;
+   vertical-align: middle;
+}
+
+td.details-control {
+    position: relative;
+}
+
+td.details-control:before {
+    content: "\f055";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #69AA46;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+tr.shown td.details-control {
+    position: relative;
+}
+
+tr.removed td.details-control:before {
+	content: "\f055";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #718a25;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+tr.shown td.details-control:before {
+    content: "\f056";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #ff0000;
+    font-size: 18px;
+    cursor: pointer; 
+}
+
+div.slider {
+    display: none;
+}
+
+.parent-row-even {
+   border-bottom: 1px solid #d7dfff !important;
+   font-size: 15px;
+}
+
+.parent-row-odd {
+   border-bottom: 1px solid #FFF !important;
+   font-size: 15px;
+}
+
+.parent-row-removed {
+   border-bottom: 2px solid #c1c2c3 !important;
+}
+
+.icon-removed {
+	color: black;
+}
+
+.stripe-even {
+	background-color:#d7dfff !important;
+}
+
+.stripe-odd {
+	background-color:#FFF !important;
+}
+
+.child-header {
+	font-weight:bold;
+	display:block;
+    width: auto;
+    align:center;
+    font-size: 14px;
+}
+
+.password-text {
+	font-size: 14px;
+}
+
+.child-table-row {
+	font-size: 13px;
+	font-weight: normal;
+	height: 23px !important;
+}
+
+.dataTables_wrapper label {
+	font-size:14px;
+}
+
+.label {
+	height:22px !important;
+	font-size:12px !important;
+	vertical-align: middle;
+	padding-top: 3.6px;
+}
+
+table.dataTable tbody td.no-padding {
+    padding: 0;
+}
+
+.inactive {
+	color: #a9a9a9 !important;
+	text-decoration: none !important;
+	cursor: default !important;
+}

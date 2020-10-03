@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taco Loco</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/sticky.css" rel="stylesheet" />
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/fonts.googleapis.com.css" rel="stylesheet" />
+    <link href="/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" rel="stylesheet" />
+    <link href="/css/ace-skins.min.css" rel="stylesheet" />
+    <link href="/css/ace-rtl.min.css" rel="stylesheet" />
+    <link href="/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="navbar" class="navbar navbar-default ace-save-state">
+        <div class="navbar-container ace-save-state" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="/" class="navbar-brand"> <small> <i class="fa fa-leaf"></i> Taco Loco </small>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-container ace-save-state" id="main-container">
+        <script type="text/javascript">
+            try{ace.settings.loadState('main-container')}catch(e){}
+        </script>
+        <div class="main-content">
+            <div class="main-content-inner">
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="infobox-container">
+                                    <div class="space-6"></div>
+                                    <form id="getTotal" action="/getTotal" method="post">
+                                        <h5 align="left" style="font-weight: bold;">Enter Orders</h5>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Veggie Taco</label>
+                                            <div class="col-sm-1">
+                                                <input type="text" name="tacoVeggie" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Chicken/Beef Taco</label>
+                                            <div class="col-sm-1">
+                                                <input type="text" name="tacoChickenBeef" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Chorizo Taco</label>
+                                            <div class="col-sm-1">
+                                                <input type="text" name="tacoChorizo" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="orderTotal" class="btn btn-primary">Order</button>
+                                        </div>
+                                    </form>
+                                    <h5 id="total" align="left" style="font-weight: bold;"></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/jquery.dataTables.bootstrap.min.js"></script>
+    <script src="/js/dataTables.buttons.min.js"></script>
+    <script src="/js/buttons.flash.min.js"></script>
+    <script src="/js/buttons.html5.min.js"></script>
+    <script src="/js/buttons.print.min.js"></script>
+    <script src="/js/buttons.colVis.min.js"></script>
+    <script src="/js/dataTables.select.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/ace-elements.min.js"></script>
+    <script src="/js/ace-extra.min.js"></script>
+    <script src="/js/ace.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#orderTotal").click( function() {
+                $("#getTotal").submit();
+            });
+
+            $( '#getTotal' ).submit(function( event ) {
+
+                // Convert the form to a JSON object and post it
+                $.ajax({
+                    type:"post",
+                    data: JSON.stringify($( "#getTotal" ).serializeArray()),
+                    url:"/getTotal",
+                    async: false,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function(result) {
+
+                        $('#total').text("Your Total is $" + result.total);
+                    }
+                });
+
+                event.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
