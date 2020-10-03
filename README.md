@@ -11,6 +11,6 @@ Chorizo Taco, $3.50 ea.
 If a customer orders 4 or more tacos, 
 then a 20% discount will be applied to the entire order
 
-####Endpoints
+#### Endpoints
 
 Actuator Health Check Endpoint http://localhost:8080/actuator/health
