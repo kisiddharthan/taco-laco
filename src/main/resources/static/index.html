@@ -35,30 +35,35 @@
                                 <div class="infobox-container">
                                     <div class="space-6"></div>
                                     <form id="getTotal" action="/getTotal" method="post">
-                                        <h5 align="left" style="font-weight: bold;">Enter Orders</h5>
-                                        <div class="form-group row">
+
+                                        <div class="form-group row" style="text-align: left; padding-left: 25px">
+                                            <u style="text-decoration-style: double"><h5 style="font-weight: bold;">Enter Orders</h5></u>
+                                        </div>
+                                        <div class="form-group row" style="text-align: left; padding-left: 25px">
                                             <label class="col-sm-2 col-form-label">Veggie Taco</label>
                                             <div class="col-sm-1">
-                                                <input type="text" name="tacoVeggie" class="form-control" />
+                                                <input type="number" name="tacoVeggie" class="form-control" />
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        <div class="form-group row" style="text-align: left; padding-left: 25px">
                                             <label class="col-sm-2 col-form-label">Chicken/Beef Taco</label>
                                             <div class="col-sm-1">
-                                                <input type="text" name="tacoChickenBeef" class="form-control" />
+                                                <input type="number" name="tacoChickenBeef" class="form-control" />
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        <div class="form-group row" style="text-align: left; padding-left: 25px">
                                             <label class="col-sm-2 col-form-label">Chorizo Taco</label>
                                             <div class="col-sm-1">
-                                                <input type="text" name="tacoChorizo" class="form-control" />
+                                                <input type="number" name="tacoChorizo" class="form-control" />
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
+                                        <div class="form-group row" style="text-align: left; padding-left: 25px">
                                             <button type="button" id="orderTotal" class="btn btn-primary">Order</button>
                                         </div>
+                                        <div class="modal-footer">
+                                            <h5 id="total" align="left" style="font-weight: bold;"></h5>
+                                        </div>
                                     </form>
-                                    <h5 id="total" align="left" style="font-weight: bold;"></h5>
                                 </div>
                             </div>
                         </div>
